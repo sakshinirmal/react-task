@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Provide a neutral app background and default font */
+body {
+  @apply bg-slate-800 text-slate-100 font-sans;
+}
