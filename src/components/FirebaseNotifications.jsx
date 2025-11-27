@@ -303,4 +303,3 @@ const FirebaseNotifications = () => {
 }
 
 export default FirebaseNotifications
-
