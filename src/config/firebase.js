@@ -2,21 +2,15 @@ import { initializeApp } from 'firebase/app'
 import { getMessaging, getToken, onMessage, isSupported } from 'firebase/messaging'
 import { getAnalytics, logEvent, isSupported as isAnalyticsSupported } from 'firebase/analytics'
 
-// Firebase configuration
-// NOTE: Replace these with your actual Firebase project credentials
 const firebaseConfig = {
-<<<<<<< HEAD
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-=======
- apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
->>>>>>> c2c736042d54efa57eb93d54eca7a6d8f6ff5aec
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
-}
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
