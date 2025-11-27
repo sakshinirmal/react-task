@@ -3,13 +3,7 @@ import { getMessaging, getToken, onMessage, isSupported } from 'firebase/messagi
 import { getAnalytics, logEvent, isSupported as isAnalyticsSupported } from 'firebase/analytics'
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyDWMRo91n5ndbAufxG-ylPsvxA3YsxkCm8", authDomain: "notify-aa8c5.firebaseapp.com", projectId: "notify-aa8c5", storageBucket: "notify-aa8c5.firebasestorage.app", messagingSenderId: "367357057396", appId: "1:367357057396:web:a451649dd005e2ff39f421", measurementId: "G-85XEMXFPZ6"
 };
 
 // Initialize Firebase
@@ -71,30 +65,30 @@ export const requestNotificationPermission = async () => {
   try {
     const messagingInstance = await getMessagingInstance()
     const permission = await Notification.requestPermission()
-    
+
     if (permission === 'granted') {
       // VAPID key - Get this from Firebase Console > Project Settings > Cloud Messaging > Web Push certificates
       // If you don't have one, click "Generate key pair" in Firebase Console
       const vapidKey = 'YOUR_VAPID_KEY_HERE' // TODO: Replace with your VAPID key from Firebase Console
-      
+
       if (vapidKey === 'YOUR_VAPID_KEY_HERE') {
         console.warn('VAPID key not configured. Please add your VAPID key from Firebase Console.')
-        return { 
-          token: null, 
+        return {
+          token: null,
           permission,
           error: 'VAPID key not configured. Please add your VAPID key in firebase.js'
         }
       }
-      
+
       try {
         const token = await getToken(messagingInstance, { vapidKey })
         return { token, permission }
       } catch (tokenError) {
         console.error('Error getting FCM token:', tokenError)
-        return { 
-          token: null, 
+        return {
+          token: null,
           permission,
-          error: tokenError.message 
+          error: tokenError.message
         }
       }
     }
@@ -125,7 +119,7 @@ export const logErrorToCrashlytics = (error, context = {}) => {
   // import { getCrashlytics, recordError } from 'firebase/crashlytics'
   // const crashlytics = getCrashlytics(app)
   // recordError(crashlytics, error, context)
-  
+
   // For demo purposes, we'll log to console and could send to a logging service
   console.error('Crashlytics Error:', {
     error: error.message || error,
@@ -133,7 +127,7 @@ export const logErrorToCrashlytics = (error, context = {}) => {
     context,
     timestamp: new Date().toISOString(),
   })
-  
+
   // In production, you would send this to Firebase Crashlytics
   // This is a placeholder for the actual Crashlytics integration
 }
