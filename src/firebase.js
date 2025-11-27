@@ -3,13 +3,13 @@ import { getMessaging } from "firebase/messaging";
 
 // Your Firebase configuration
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-    appId: import.meta.env.VITE_FIREBASE_APP_ID,
-    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyDWMRo91n5ndbAufxG-ylPsvxA3YsxkCm8",
+  authDomain: "notify-aa8c5.firebaseapp.com",
+  projectId: "notify-aa8c5",
+  storageBucket: "notify-aa8c5.firebasestorage.app",
+  messagingSenderId: "367357057396",
+  appId: "1:367357057396:web:a451649dd005e2ff39f421",
+  measurementId: "G-85XEMXFPZ6"
 };
 
 // Initialize Firebase
